@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Landing Page</title>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./food.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="part1">
+
+            <div class="pad">
+                
+            <nav>
+                <ul>
+            <li> <a href="#"> About </a> </li>
+            <li> <a href="#"> Contact </a> </li>
+            <li> <a href="#"> Dishes </a> </li>
+            <li> <a href="#"> Login </a> </li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="text">
+            <h1>Better</h1>
+            <h1>Food.</h1>
+            <h1>Better Life</h1>
+        </div>
+    </div>
+    </div>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <div class="btn">
+            <a href="#">Read more </a>
+        </div>
+    </div>
+    <div class="part2">
+    </div>
+    <div class="cursor"></div>
+</div>
+
+
+<script>
+    const images = ['./images/food1.webp','./images/food2.webp','./images/food3.webp'];
+    const part2 = document.querySelector('.part2');
+    const cursor = document.querySelector('.cursor');
+    $('.container').mousemove(function(e){
+        const x = e.pageX;
+        const y = e.pageY;
+        cursor.style.top = y + 'px';
+        cursor.style.left = x + 'px';
+    });
+   
+    document.addEventListener('DOMContentLoaded',myFunction,false);
+        function myFunction(){
+        setTimeout(function(){
+            const random = Math.floor(Math.random() * images.length);
+            //console.log(random);            
+            myFunction();
+            part2.style.backgroundImage = "url(" + images[random] + ")"
+        }, 2500);
+    }
+    </script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./underwater_landing.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h2>
+                    KEHAR
+                </h2>
+            </div>
+            <ul>
+                <li> <a href="#"> Home </a> </li>
+                <li> <a href="#"> About </a> </li>
+                <li> <a href="#"> Blogs </a> </li>
+                <li> <a href="#"> Contact </a> </li>
+                <li> <a href="#"> Login </a> </li>
+            </ul>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fa fa-bars"></i>
+            </label>
+
+        </nav>
+        <div class="video_container">
+                <video autoplay loop muted class="video vid1">
+                    <source src="./videos/video1.mp4" type="video/mp4"> 
+                </video>                                                   
+                <video autoplay loop muted class="video vid2">
+                    <source src="./videos/video2.mp4" type="video/mp4"> 
+                </video>                                                   
+                <video autoplay loop muted class="video vid3">
+                    <source src="./videos/video3.mp4" type="video/mp4"> 
+                </video>                                                   
+        </div>
+        <div class="dots dot1"></div>
+        <div class="dots dot2"></div>
+        <div class="dots dot3"></div>
+
+        <div class="text text1">
+            <h1>Underwater</h1>
+            <h2>adventure</h2>
+            <button>join now</button>
+        </div>
+        <div class="text text2">
+            <h1>Underwater2</h1>
+            <h2>adventure2</h2>
+            <button>join now</button>
+        </div>
+        <div class="text text3">
+            <h1>Underwater3</h1>
+            <h2>adventure3</h2>
+            <button>join now</button>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        var dots = document.querySelectorAll('.dots');
+        var text = document.querySelectorAll('.text');
+        var video = document.querySelectorAll('.video');
+        var vid1 = document.querySelector('.vid1');
+        var vid2 = document.querySelector('.vid2');
+        var vid3 = document.querySelector('.vid3');
+        var dot1 = document.querySelector('.dot1');
+        var dot2 = document.querySelector('.dot2');
+        var dot3 = document.querySelector('.dot3');
+        var text1 = document.querySelector('.text1');
+        var text2 = document.querySelector('.text2');
+        var text3 = document.querySelector('.text3');
+        
+        dots.forEach(dot=>{
+            dot.onclick = function(){
+                video.forEach(vid=>{
+                    vid.style.display = 'none';
+                });
+                text.forEach(text=>{
+                    text.style.display = 'none';
+                });
+                if(dot.classList.contains('dot1')){
+                    vid1.style.display = 'block';
+                    text1.style.display = 'block';
+                    console.log('video1');
+                }
+                else if(dot.classList.contains('dot2')){
+                    vid2.style.display = 'block';
+                    text2.style.display = 'block';
+                    console.log('video2')
+                }
+                else if(dot.classList.contains('dot3')){
+                    vid3.style.display = 'block';
+                    text3.style.display = 'block';
+                    console.log('video3')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
